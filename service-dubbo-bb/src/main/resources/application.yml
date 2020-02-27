@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: service-dubbo-bb
+
+dubbo:
+  name: service-dubbo-bb
+  # \u914D\u7F6E\u670D\u52A1\u4FE1\u606F
+  application:
+    # \u7981\u7528QOS\u540C\u4E00\u53F0\u673A\u5668\u53EF\u80FD\u4F1A\u6709\u7AEF\u53E3\u51B2\u7A81\u73B0\u8C61
+    qos-enable: false
+    qos-accept-foreign-ip: false
+  # \u914D\u7F6E\u6CE8\u518C\u4E2D\u5FC3
+  registry:
+    address: nacos://127.0.0.1:8848
+  protocol:
+    name: dubbo
+    port: 20881
+  provider:
+    timeout: 4000

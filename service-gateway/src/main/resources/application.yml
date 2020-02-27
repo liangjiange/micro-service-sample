@@ -1,0 +1,53 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: trace
+        http:
+          server:
+            reactive: debug
+        web:
+          reactive: debug
+        boot:
+          autoconfigure:
+            web: debug
+    reactor:
+      netty: debug
+      ipc:
+        netty: debug
+    redisratelimiter: debug
+
+
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      # 跨域
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedHeaders: "*"
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+                POST
+                DELETE
+                PUT
+                OPTION
+
+management:
+  endpoints:
+    web:
+      base-path: /

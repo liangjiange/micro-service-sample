@@ -1,0 +1,28 @@
+server:
+  port: 8990
+
+spring:
+  application:
+    name: service-b
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+dubbo:
+  # 配置服务信息
+  application:
+    name: service-b
+    # 禁用QOS同一台机器可能会有端口冲突现象
+    qos-enable: false
+    qos-accept-foreign-ip: false
+  # 配置注册中心
+  registry:
+    address: nacos://127.0.0.1:8848
+  protocol:
+    name: dubbo
+    port: 20881
+  # 设置超时时间
+  consumer:
+    timeout: 4000
+    check: false
