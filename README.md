@@ -10,8 +10,8 @@ service-gateway | api路由
 service-auth | 认证服务
 service-a | rest template示例
 service-a-openfeign | openfeign示例
-service-rest-aa | 会员版微服务
-service-b | 商品微服务
+service-rest-aa | 
+service-b | 
 service-dubbo-bb | dubbo调用示例
 
 ## 服务启动
